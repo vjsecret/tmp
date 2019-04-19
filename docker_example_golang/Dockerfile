@@ -14,3 +14,5 @@ RUN go build -o main .
 
 CMD ["./main"]
 
+
+#docker run -it golang1
