@@ -1,0 +1,12 @@
+//https://openhome.cc/Gossip/Go/Package.html
+//建立一個 src/cc/openhome 目錄，然後將方才的 hello.go 與 hi.go 移至該目錄之中
+//go install cc/openhome/goexample
+
+package main
+
+import "goexample"
+
+func main() {
+        goexample.Hi()
+        goexample.Hello()
+}
