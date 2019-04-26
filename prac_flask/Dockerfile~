@@ -8,11 +8,8 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copy everything from the current directory to the PWD(Present Working Directory) inside the container
-#COPY . .
-# 複製目前目錄下的內容，放進 Docker 容器中的 /app
 ADD ./tmpflask.py /app/
 ADD ./requirements.txt /app/
-#ADD /usr/local/pythonPro/ /app/
 
 #RUN apt-get update
 #RUN pip install --upgrade pip

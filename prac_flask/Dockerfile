@@ -12,7 +12,7 @@ ADD ./tmpflask.py /app/
 ADD ./requirements.txt /app/
 
 #RUN apt-get update
-#RUN pip install --upgrade pip
+#RUN python -m pip install --upgrade pip
 #RUN apt-get install python3.5-venv
 #RUN python3.5 -m venv VENV
 #RUN apt-get install python3-pip
