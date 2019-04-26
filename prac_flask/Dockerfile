@@ -1,0 +1,28 @@
+FROM python:3.5
+
+RUN mkdir /app 
+
+# Set the Current Working Directory inside the container
+#WORKDIR $GOPATH/src/github.com/callicoder/go-docker
+# 設定工作目錄為 /app
+WORKDIR /app
+
+# Copy everything from the current directory to the PWD(Present Working Directory) inside the container
+ADD ./tmpflask.py /app/
+ADD ./requirements.txt /app/
+
+#RUN apt-get update
+#RUN pip install --upgrade pip
+#RUN apt-get install python3.5-venv
+#RUN python3.5 -m venv VENV
+#RUN apt-get install python3-pip
+
+# 安裝 requirements.txt 中所列的必要套件
+RUN pip install -r requirements.txt
+
+# 讓 80 連接埠可以從 Docker 容器外部存取
+# This container exposes port 8080 to the outside world
+EXPOSE 8080
+
+# 當 Docker 容器啟動時，自動執行 app.py
+CMD ["python", "tmpflask.py"]
