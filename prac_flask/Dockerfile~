@@ -12,7 +12,7 @@ ADD ./tmpflask.py /app/
 ADD ./requirements.txt /app/
 
 #RUN apt-get update
-#RUN pip install --upgrade pip
+#RUN python -m pip install --upgrade pip
 #RUN apt-get install python3.5-venv
 #RUN python3.5 -m venv VENV
 #RUN apt-get install python3-pip
@@ -25,4 +25,5 @@ RUN pip install -r requirements.txt
 EXPOSE 8080
 
 # 當 Docker 容器啟動時，自動執行 app.py
+#CMD ["python", "tmpflask.py", "-p 80"]
 CMD ["python", "tmpflask.py"]
